@@ -1,0 +1,6 @@
+&#8212;
+layout: null
+User-agent: *
+Disallow: 
+
+Sitemap: http://bhenerey.github.io/sitemap.xml 

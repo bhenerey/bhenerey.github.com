@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+
+<<<<<<< HEAD
+  <title><![CDATA[the most captivating blog on the internet]]></title>
+=======
+  <title><![CDATA[the most captivating blog on the internet]]></title>
+>>>>>>> adc5e302d771cd5d3fe632e75b6478f3708a8112
+  <link href="http://bhenerey.github.io/atom.xml" rel="self"/>
+  <link href="http://bhenerey.github.io/"/>
+  <updated>2015-05-03T10:17:41-05:00</updated>
+  <id>http://bhenerey.github.io/</id>
+  <author>
+    <name><![CDATA[Brian Henerey]]></name>
+    
+  </author>
+  <generator uri="http://octopress.org/">Octopress</generator>
+
+  
+</feed>
