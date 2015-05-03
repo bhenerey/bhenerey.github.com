@@ -1,0 +1,14 @@
+<section>
+  <h1>Recent Posts</h1>
+  <ul id="recent_posts">
+    {% for post in site.posts limit: site.recent_posts %}
+      <li class="post">
+<<<<<<< HEAD
+        <a href="{{ root_url }}{{ post.url }}">{% if site.titlecase %}{{ post.title | titlecase }}{% else %}{{ post.title }}{% endif %}</a>
+=======
+        <a href="{{ root_url }}{{ post.url }}">{{ post.title }}</a>
+>>>>>>> adc5e302d771cd5d3fe632e75b6478f3708a8112
+      </li>
+    {% endfor %}
+  </ul>
+</section>

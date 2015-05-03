@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+
+  <title><![CDATA[Brian Henerey]]></title>
+  <link href="http://bhenerey.github.com/atom.xml" rel="self"/>
+  <link href="http://bhenerey.github.com/"/>
+  <updated>2013-04-06T10:26:57-05:00</updated>
+  <id>http://bhenerey.github.com/</id>
+  <author>
+    <name><![CDATA[Brian Henerey]]></name>
+    
+  </author>
+  <generator uri="http://octopress.org/">Octopress</generator>
+
+  
+  <entry>
+    <title type="html"><![CDATA[Pushing metrics into Graphite: AWS Cloudwatch]]></title>
+    <link href="http://bhenerey.github.com/blog/2013/04/05/pulling-aws-cloudwatch-metrics-into-graphite/"/>
+    <updated>2013-04-05T10:29:00-05:00</updated>
+    <id>http://bhenerey.github.com/blog/2013/04/05/pulling-aws-cloudwatch-metrics-into-graphite</id>
+    <content type="html"><![CDATA[<p>A couple days ago I came across <a href="https://github.com/99designs/vacuumetrix">vacuumetrix</a> from <a href="https://twitter.com/dlutzy">@dultzy</a>. I wanted to get metrics from a variety of sources, including AWS, into Graphite, and this fit the bill.</p>
+
+<p>The first script I setup was <a href="https://github.com/99designs/vacuumetrix/blob/master/bin/AWScountEC2.rb">AWScountEC2.rb</a>, and once the metrics were flowing I added a dashboard to <a href="https://github.com/ripienaar/gdash">Gdash</a>:</p>
+
+<p><img src="http://bhenerey.github.com/images/awscount.png" width="500" height="250"></p>
+
+<p>I was really impressed how easy it was to get this data, so I added checks for RDS, ELBs and Elasticache to <a href="http://sensuapp.org/">Sensu</a>, our monitoring framework, with this config:</p>
+
+<div><script src='https://gist.github.com/5321751.js'></script>
+<noscript><pre><code></code></pre></noscript></div>
+
+
+<p>Here&#8217;s a couple ELB example graphs:</p>
+
+<p><img src="http://bhenerey.github.com/images/ELBexample.png" width="500" height="250">
+<img src="http://bhenerey.github.com/images/ELBlatency.png" width="500" height="250"></p>
+
+<p>And one for Elasticache:</p>
+
+<p><img src="http://bhenerey.github.com/images/Elasticache.png" width="500" height="250"></p>
+
+<p>There were comments in the code about lag in the data, so I wouldn&#8217;t try recommend using this data for alerts over native Cloudwatch alerts, but it&#8217;s still useful for correlation and trending.</p>
+
+<p>There are many other data points from Cloudwatch to be graphed. The nice part of Sensu + Gdash is how easy it is to programmatically create dashboards for all existing and new resources.</p>
+]]></content>
+  </entry>
+  
+</feed>
